@@ -1,17 +1,19 @@
-import './App.css'
-import Book from './components/book'
-import Booklist from './components/BookList'
+import './App.css';
+import Booklist from './components/BookList';
+import Header from './components/header';
+import Layout from './components/Layout';
 
 
 function App() {
 
   return (
     <>
-<Booklist />
+    <Layout/>
+    
+    <Header/>
+    <Booklist/>
 
-
-
-
+    <Layout/>
 
 
     </>
