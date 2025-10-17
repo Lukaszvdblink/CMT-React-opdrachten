@@ -8,12 +8,12 @@ function App() {
 
   return (
     <>
-    <Layout/>
-    
-    <Header/>
-    <Booklist/>
+      <Layout>
 
-    <Layout/>
+        <Header />
+        <Booklist />
+
+      </Layout>
 
 
     </>
