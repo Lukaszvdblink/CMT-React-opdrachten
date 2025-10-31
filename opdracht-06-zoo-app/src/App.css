@@ -1,42 +1,68 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Algemene pagina-stijl */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f3d9b1;
+  margin: 0;
+  padding: 0;
+  color: #4d2e00;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Secties (Home + Detail) */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Koppen */
+h1 {
+  color: #7a4b00;
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h2 {
+  color: #5c3600;
+  margin-bottom: 25px;
 }
 
-.card {
-  padding: 2em;
+/* Afbeeldingen in kaarten of details */
+img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  margin-bottom: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+/* Knoppen */
+button {
+  background-color: #e6a15b;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #d18a46;
+}
+
+/* Cards (voor je dieren) */
+section > div, section > article {
+  background-color: #fdf3df;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 10px;
+  margin: 10px;
+  transition: transform 0.2s ease;
+}
+
+section > div:hover, section > article:hover {
+  transform: scale(1.03);
 }
