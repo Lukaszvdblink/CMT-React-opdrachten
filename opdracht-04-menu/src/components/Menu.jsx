@@ -1,12 +1,11 @@
-
-const menu = ({id, title, category, price, img, desc}) => {
+const menu = ({ title, category, price, img, desc}) => {
     return ( 
         <section>
-    <img src={image} alt=""  className="image"/>
+    <img src={img} alt=""  className="image"/>
     <h2>{title}</h2>
     <h4>{category}</h4>
-   <h3>{prijs}</h3>
-   <p>{description}</p>
+   <h3>{price}</h3>
+   <p>{desc}</p>
    </section>
      );
     

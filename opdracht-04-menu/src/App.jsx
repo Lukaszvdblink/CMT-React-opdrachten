@@ -1,5 +1,5 @@
 import './App.css'
-import Menulist from './components/MenuList'
+import MenuList from './components/MenuList'
 
 function App() {
 

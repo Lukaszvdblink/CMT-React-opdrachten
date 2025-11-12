@@ -1,14 +1,14 @@
-import menu from "./Menu";
+import Menu from "./Menu";
 import { useState } from "react";
-const Menulist = () => {
-const [gerechten, setGerechten] = useState(menu);
+import data from '../data.js'
+const MenuList = () => {
+const [gerechten, setGerechten] = useState(data);
 
     return ( 
         <section className="menu-container">
       {gerechten.map((gerecht) => (
         <Menu
           key={gerecht.id}
-          id={gerecht.id}
           title={gerecht.title}
           category={gerecht.category}
           price={gerecht.price}
@@ -20,4 +20,4 @@ const [gerechten, setGerechten] = useState(menu);
      );
 }
  
-export default Menulist;
+export default MenuList;
