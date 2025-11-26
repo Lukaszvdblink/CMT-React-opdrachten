@@ -1,10 +1,20 @@
+import React, { useState } from 'react'
 import './App.css'
+import CreateMessage from './components/CreateMessage'
+import MessageList from './components/MessageList'
 
 function App() {
+  const [message, setMessage] = useState([])
+  const name = "Lukasz"
+
+  const addMessageHandler = (newMessage) => {
+    setMessage(prev => [...prev, newMessage])
+  }
 
   return (
     <>
-      <h1>Opdracht 7 - Twitter</h1>
+      <CreateMessage addMessage={addMessageHandler} />
+      <MessageList name={name} message={message} />
     </>
   )
 }
