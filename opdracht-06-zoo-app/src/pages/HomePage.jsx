@@ -4,26 +4,47 @@ import animals from '../animals.js';
 import Card from '../components/Card.jsx';
 
 const Home = () => {
+
   const navigate = useNavigate();
   const [animalList, setAnimalList] = useState(animals);
+  const [searchInput, setsearchInput] = useState('');
 
   const goToDetail = (animalId) => {
     navigate(`/animals/${animalId}`);
   };
 
+  const searchHandler = (e) => {
+    let newSearch = e.target.value;
+    setsearchInput(newSearch);
+
+    const filteredAnimals = animals.filter((animal) =>
+      animal.name.toLowerCase().includes(searchInput.toLowerCase())
+    );
+
+    setAnimalList(filteredAnimals);
+  };
+
   return (
-    <section>
-      <h1>Welkom bij mijn website</h1>
-      <h2>Onze Dieren</h2>
-      
-      {animalList.map(animal => (
-        <Card
-          key={animal.id}
-          animals={animal}
-          onShowDetail={goToDetail}
+    <>
+      <div>
+        <input 
+          type="text" 
+          placeholder="zoek hier uw dier" 
+          name="search" 
+          onChange={searchHandler}
         />
-      ))}
-    </section>
+      </div>
+
+      <section className="container">
+        {animalList.map((animal) => (
+          <Card
+            key={animal.id}
+            animals={animal}
+            onShowDetail={goToDetail}
+          />
+        ))}
+      </section>
+    </>
   );
 };
 
