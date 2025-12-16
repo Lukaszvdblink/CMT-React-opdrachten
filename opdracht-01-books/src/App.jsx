@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import Navigation from './pages/Navigation';
 
 
+
 function App() {
 
   return (
