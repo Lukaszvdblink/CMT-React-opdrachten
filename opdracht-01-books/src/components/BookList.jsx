@@ -7,49 +7,46 @@ import booksData from '../booksData.js'
 const Booklist = () => {
 
 
-    const [books, setBooks] = useState(booksData);
-    const [searchInput, setsearchInput] = useState('')
+  const [books, setBooks] = useState(booksData);
+  const [searchInput, setsearchInput] = useState('')
   const searchHandler = (e) => {
     let newSearch = e.target.value
     setsearchInput(newSearch)
 
-      const filteredBooks = booksData.filter((book) =>
-   
-    book.title.toLowerCase().includes(searchInput.toLowerCase())
-    
+    const filteredBooks = booksData.filter((book) =>
 
+      book.title.toLowerCase().includes(searchInput.toLowerCase())
 
-    
-  )
-  setBooks(filteredBooks)
+    )
+    setBooks(filteredBooks)
   };
 
 
 
- 
 
 
 
-    return (
-<>
-     <div>
+
+  return (
+    <>
+      <div>
         <input type="text" placeholder="zoek hier uw boek" name="search" onChange={searchHandler} />
-     </div>
+      </div>
 
 
-        <section className="container">
-            <BookCounter aantal={books.length}/>
-            {books.map((book)  => (
-   <Book title={book.title} author={book.author} image={book.image} />
+      <section className="container">
+        <BookCounter aantal={books.length} />
+        {books.map((book) => (
+          <Book title={book.title} author={book.author} image={book.image} year={book.year} pages={book.pages} description={book.description} />
 
-            ))}
-            
-            
-        </section>
+        ))}
 
-</>
 
-    );
+      </section>
+
+    </>
+
+  );
 };
 
 export default Booklist;
