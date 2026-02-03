@@ -1,21 +1,28 @@
-import UserProfile from "../components/UserProfile"
+const USER_KEY = "userProfile";
+const APPOINTMENTS_KEY = "appointments";
 
-const setUserProfile = (profile) => {
-localStorage.setItem('userProfile', JSON.stringify(profile))
+export function getUserProfile() {
+  try {
+    const data = localStorage.getItem(USER_KEY);
+    return data ? JSON.parse(data) : null;
+  } catch {
+    return null;
+  }
 }
 
-const getUserProfile = () => {
-    try{
-        return JSON.parse(localStorage.getItem('userProfile')) || null
-    } catch{
-        return null
-    }
+export function setUserProfile(profile) {
+  localStorage.setItem(USER_KEY, JSON.stringify(profile));
 }
 
-const setAppointments = () => {
-    
+export function getAppointments() {
+  try {
+    const data = localStorage.getItem(APPOINTMENTS_KEY);
+    return data ? JSON.parse(data) : [];
+  } catch {
+    return [];
+  }
 }
 
-const getAppointments = () => {
-    
+export function setAppointments(appointments) {
+  localStorage.setItem(APPOINTMENTS_KEY, JSON.stringify(appointments));
 }

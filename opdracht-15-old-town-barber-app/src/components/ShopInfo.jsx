@@ -1,5 +1,4 @@
-const ShopInfo = () => {
-  const shopData = {
+const shopData = {
   name: "Old Town Barber",
   hours: "Ma-Za: 9:00 - 18:00",
   services: [
@@ -10,20 +9,22 @@ const ShopInfo = () => {
   ]
 };
 
+function ShopInfo() {
   return (
-  <div>
-    <h2>{shopData.name}</h2>
-    <p>{shopData.hours}</p>
+    <div>
+      <h2>{shopData.name}</h2>
+      <p>{shopData.hours}</p>
 
-    <ul>
-      {shopData.services.map((service) => (
-        <li key={service.id}>
-          {service.name}  €{service.price}  {service.duration} min
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-};
+      <ul>
+        {shopData.services.map(service => (
+          <li key={service.id}>
+            {service.name} – €{service.price} ({service.duration} min)
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default ShopInfo;
+export { shopData };
